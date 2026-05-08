@@ -2,6 +2,8 @@ To run the pipeline, you muust create a docker container for the ubuntu version 
 Nvidia GPU with cuda118 drivers
 Python 3.8
 Clone the pycuvslam repo in your system and download any standard dataset such as kitti or TUM RGB dataset.
+Use the following link to get indepth details of how to setup the repo.
+https://github.com/AlexD123123/PyCuVSLAM
 Test the monocular odometry for the standard datasets and validate the results within the examples folder in the pycuvslam repo. Once done you can add the personal datasets and try and run the files in the following order
 extractframes.py -----> run_mirnet_clean ------> track_mono.py
 
