@@ -1,0 +1,22 @@
+services:
+  pycuvslam:
+    image: pycuvslam:realsense-x86
+    container_name: pycuvslam_kitti
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      #- /home/ritikjohari/datasets/kitti/dataset:/data
+      - /home/ritikjohari/datasets:/datasets
+      - .:/pycuvslam
+    working_dir: /pycuvslam
+    # This keeps the container running in the background so you can enter it anytime
+    command: sleep infinity
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
